@@ -13,7 +13,7 @@ public class InMemoryUserBookingRepository implements UserBookingRepository{
         return userBooking.getOrDefault(userId, new ArrayList<>());
     }
 
-    @SuppressWarnings("unused")
+  
     @Override
     public void addBooking(String userId, Slot slot) {
         userBooking.computeIfAbsent(userId, k-> new ArrayList<>()).add(slot);
