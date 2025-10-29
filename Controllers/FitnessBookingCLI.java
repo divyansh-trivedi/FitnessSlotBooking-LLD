@@ -19,7 +19,52 @@ public class FitnessBookingCLI {
 
         while (true) {
             System.out.print("> ");
-            S
+            String line = sc.nextLine();
+            if(line.equalsIgnoreCase("exit")) break;
+
+            String parts[] = line.split(" ");
+            try {
+                switch (parts[0]) {
+                    case "ADD_SLOT" -> {
+                        // parts: ADD_SLOT <slotId> <title> <start> <end> <capacity>
+                    	//Models.Slot.Slot(String slotId, String title, LocalDateTime start, LocalDateTime end, int capacity)
+                        Slot slot = new Slot(
+                                parts[1],                         
+                                parts[2],                         
+                                LocalDateTime.parse(parts[3]),    
+                                LocalDateTime.parse(parts[4]),  
+                                Integer.parseInt(parts[5])        
+                        );
+                        System.out.println(service.addSlot(slot));
+                    }
+                    case "LIST_SLOTS" -> {
+                    	//LIST_SLOTS 2025-09-01
+                    	//LIST_SLOTS
+                        LocalDate date = parts.length > 1 ? LocalDate.parse(parts[1]) : null;
+                        List<Slot> slots = service.listSlots(date);
+                        for (Slot s : slots) {
+                            System.out.printf("%s %s %s-%s capacity=%d booked=%d%n",
+                                    s.getSlotId(),
+                                    s.getTitle(),
+                                    s.getStart().toLocalTime(),
+                                    s.getEnd().toLocalTime(),
+                                    s.getCapacity(),
+                                    s.getBookedCount());
+                        }
+                    }
+                    case "BOOK" -> System.out.println(service.bookSlot(parts[1], parts[2]));
+                    case "CANCEL" -> System.out.println(service.cancelBooking(parts[1], parts[2]));
+                    case "LIST_BOOKINGS" -> {
+                        List<Slot> bookings = service.listUserBookings(parts[1]);
+                        System.out.println(parts[1] + " -> " + bookings.stream()
+                                .map(s -> s.getSlotId() + " " + s.getStart() + "-" + s.getEnd())
+                                .toList());
+                    }
+                    default -> System.out.println("Unknown command");
+                }
+            } catch (Exception e) {
+                System.out.println("Error: " + e.getMessage());
+            }
 
         }
     }
@@ -42,4 +87,4 @@ public class FitnessBookingCLI {
 			CANCEL u4 S1
 			LIST_SLOTS
 			exit
-             */
+*/
