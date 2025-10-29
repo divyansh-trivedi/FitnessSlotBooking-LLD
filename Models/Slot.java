@@ -41,3 +41,4 @@ public class Slot{
     }
 
 }
+// c -> r -> s ->m
