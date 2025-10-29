@@ -7,7 +7,7 @@ import java.time.LocalDate;
 
 import Models.Slot;
 
-public class InMemoryUserSlotRepository implements SlotRepository{
+public class InMemorySlotRepository implements SlotRepository{
 
     private final Map<String, Slot> slots = new HashMap<>();
     //S1 -> [S1, Yoga, start, end, cap]

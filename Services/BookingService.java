@@ -11,8 +11,8 @@ public class BookingService{
     private final SlotRepository slotRepo;
     private final UserBookingRepository userRepo;
 
-    public BookingService(SlotRepository slotRepo, UserBookingRepository userRepo){
-        this.slotRepo = slotRepo;
+    public BookingService(Object slotRepo2, UserBookingRepository userRepo){
+        this.slotRepo = slotRepo2;
         this.userRepo = userRepo;
     }
 
@@ -31,7 +31,6 @@ public class BookingService{
 
         Slot slot = optSlot.get();
 
-        // Check overlap
         for (Slot s : userRepo.getUserBookings(userId)) {
             if (overlaps(s, slot)) return "User " + userId + " already has an overlapping booking";
         }
