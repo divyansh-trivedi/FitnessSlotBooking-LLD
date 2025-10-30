@@ -144,17 +144,7 @@ who provided insights into software design patterns and clean architecture.
 
 - Add persistence using a database (e.g., MySQL, MongoDB)
 - Add user authentication and role-based access
-- Expose REST APIs using Spring Boot
+- Expose REST APIs 
 - Add slot conflict detection and waitlist management
 
 ---
-
-## 📜 License
-
-This project is developed for **educational purposes** as part of a **Low-Level Design (LLD) exercise**.
-
----
-
-**Developed by:** Divyansh  
-**Guided by:** Kartik Sapra Sir  
-📅 **Year:** 2025
