@@ -25,26 +25,22 @@ This ensures modularity, separation of concerns, and easy scalability.
 ---
 
 ## 🧩 Project Structure
-
 FitnessSlotBookingLLD/
-│
 ├── Controllers/
-│ └── FitnessBookingCLI.java # CLI entry point and user interaction
+│   └── FitnessBookingCLI.java          # CLI entry point and user interaction
 │
 ├── Models/
-│ └── Slot.java # Represents a fitness slot (id, title, time, capacity, etc.)
+│   └── Slot.java                       # Represents a fitness slot (id, title, time, capacity, etc.)
 │
 ├── Repository/
-│ ├── InMemorySlotRepository.java # Stores slots in memory
-│ └── InMemoryUserBookingRepository.java # Manages user-slot relationships
+│   ├── InMemorySlotRepository.java     # Stores slots in memory
+│   └── InMemoryUserBookingRepository.java # Manages user-slot relationships
 │
 ├── Services/
-│ └── BookingService.java # Core business logic for booking, cancelling, and listing slots
+│   └── BookingService.java             # Core business logic for booking, cancelling, and listing slots
 │
-└── README.md # Project documentation
+└── README.md                           # Project documentation
 
-
----
 
 ## ⚙️ Features
 
