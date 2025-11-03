@@ -70,6 +70,9 @@ public class FitnessBookingCLI {
     }
 }
 
+// Compile all file first -> divyansh@PriyankPC:/mnt/c/Users/divya/OneDrive/Documents/JAVA CODE'S/FitnessSlotBookingLLD$ javac */*.java
+//now run the starting file->  divyansh@PriyankPC:/mnt/c/Users/divya/OneDrive/Documents/JAVA CODE'S/FitnessSlotBookingLLD$ java Controllers.FitnessBookingCLI
+
 /*    Input Type-:
 
             ADD_SLOT S1 Yoga 2025-09-01T07:00 2025-09-01T08:00 2

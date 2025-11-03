@@ -11,8 +11,8 @@ public class BookingService{
     private final SlotRepository slotRepo;
     private final UserBookingRepository userRepo;
 
-    public BookingService(Object slotRepo2, UserBookingRepository userRepo){
-        this.slotRepo = slotRepo2;
+    public BookingService(SlotRepository slotRepo, UserBookingRepository userRepo){
+        this.slotRepo = slotRepo;
         this.userRepo = userRepo;
     }
 
